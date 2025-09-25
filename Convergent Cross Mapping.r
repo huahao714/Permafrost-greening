@@ -62,17 +62,17 @@ ccm_hua <- function(test, E0 = 3, sample0 = 30) {
   
   # Extract results for both directions
   result_y2x <- c(
-    cor_result_y2x$estimate,           # Spearman correlation (y -> x)
-    cor_result_y2x$p.value,           # p-value (y -> x)
-    mean(ccm_df$`y:x`, na.rm = TRUE), # Mean predictive skill (y -> x)
-    ccm_df$`y:x`[nrow(ccm_df)]        # Last predictive skill value (y -> x)
+    cor_result_y2x$estimate,           # Spearman correlation (x -> y)
+    cor_result_y2x$p.value,           # p-value (x -> y)
+    mean(ccm_df$`y:x`, na.rm = TRUE), # Mean predictive skill (x -> y)
+    ccm_df$`y:x`[nrow(ccm_df)]        # Last predictive skill value (x -> y)
   )
   
   result_x2y <- c(
-    cor_result_x2y$estimate,           # Spearman correlation (x -> y)
-    cor_result_x2y$p.value,           # p-value (x -> y)
-    mean(ccm_df$`x:y`, na.rm = TRUE), # Mean predictive skill (x -> y)
-    ccm_df$`x:y`[nrow(ccm_df)]        # Last predictive skill value (x -> y)
+    cor_result_x2y$estimate,           # Spearman correlation (y -> x)
+    cor_result_x2y$p.value,           # p-value (y -> x)
+    mean(ccm_df$`x:y`, na.rm = TRUE), # Mean predictive skill (y -> x)
+    ccm_df$`x:y`[nrow(ccm_df)]        # Last predictive skill value (y -> x)
   )
   
   # Combine results
@@ -87,3 +87,4 @@ ccm_hua <- function(test, E0 = 3, sample0 = 30) {
   
   return(result) # Return final results
 }
+
