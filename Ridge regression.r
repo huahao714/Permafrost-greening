@@ -34,8 +34,8 @@ ridge_hua5 <- function(test) {
   
   # Set ridge regression parameter (K_best)
   # Alternatively, compute K_best dynamically if needed
-  # K_best <- optimize_k(test_df)  # Uncomment and define if dynamic optimization is required
-  K_best <- 2 # Fixed K_best value for simplicity
+  K_best <- optimize_k(test_df)  # Uncomment and define if dynamic optimization is required
+  # K_best <- 2 # Fixed K_best value for simplicity
   
   # Perform ridge regression
   mod <- lmridge(var_y ~ ., data = test_df, K = K_best, scaling = "centered")
@@ -55,3 +55,4 @@ ridge_hua5 <- function(test) {
   
   return(result_all) # Return all calculated results
 }
+
